@@ -13,18 +13,19 @@ import java.util.Scanner;   // Import Scanner
 
 public class LogicalPrograms {
     public static void main(String[] args) {  // Entry point of Program
-        Scanner scanner = new Scanner(System.in);  // Make Scanner obj
-        System.out.println("Enter a number: ");
-        String number = scanner.next();
-        int newNum = Integer.parseInt(number); // this method is  used to convert String to Integer in Java
-        int reverseNum=0;
+        char[] chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".toCharArray(); // toCharArray() method converts the given string into a sequence of characters.
+        int max=100000000;
+        int random=(int) (Math.random()*max);  //random function
+        StringBuffer sb=new StringBuffer(); // StringBuffer is a peer class of String that provides much of the functionality of strings.
 
-        for(int i=1;i<=number.length();i++){
-            int remainder = newNum%10;  //To find remainder
-            newNum = newNum/10;
-            reverseNum = reverseNum*10+remainder;  //Reverse Number logic
+        while (random>0)
+        {
+            sb.append(chars[random % chars.length]);
+            random /= chars.length;
         }
-        System.out.println("Reverse number is: "+ reverseNum);
-        }
+
+        String couponCode=sb.toString();  // tostring is built method used to return a string.
+        System.out.println("Coupon Code: "+couponCode);
+    }
 
 }
