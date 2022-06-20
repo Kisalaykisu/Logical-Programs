@@ -1,11 +1,12 @@
-/* Q-4) Reverse a number
-In Java, we can reverse a number either by using for loop, while loop, or using recursion.
-The simplest way to reverse a number is by using for loop or while loop. In order to
-reverse a number, we have to follow the following steps:
-a. We need to calculate the remainder of the number using the modulo
-b. After that, we need to multiply the variable reverse by 10 and add the remainder into
-it.
-c. We then divide the number by 10 and repeat steps until the number becomes 0.
+/* Q-5. Coupon Numbers
+a. Desc -> Given N distinct Coupon Numbers, how many random numbers do you
+need to generate a distinct coupon number? This program simulates this random
+process.
+b. I/P -> N Distinct Coupon Number
+c. Logic -> repeatedly choose a random number and check whether it's a new one.
+d. O/P -> total random number needed to have all distinct numbers.
+e. Functions => Write Class Static Functions to generate random numbers and to
+process distinct coupons.
 */
 package com.bridgelabz;  // Package
 import java.util.Scanner;   // Import Scanner
