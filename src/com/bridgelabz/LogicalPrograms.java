@@ -1,8 +1,11 @@
-/* Q-3.) Prime Number
-Just like the Perfect number, the Prime number is also a special type of number. When
-the number is divided greater than 1 and divided by 1 or itself is referred to as the Prime
-number. 0 and 1 are not counted as prime numbers. All the even numbers can be
-divided by 2, so 2 is the only even prime minister.
+/* Q-4) Reverse a number
+In Java, we can reverse a number either by using for loop, while loop, or using recursion.
+The simplest way to reverse a number is by using for loop or while loop. In order to
+reverse a number, we have to follow the following steps:
+a. We need to calculate the remainder of the number using the modulo
+b. After that, we need to multiply the variable reverse by 10 and add the remainder into
+it.
+c. We then divide the number by 10 and repeat steps until the number becomes 0.
 */
 package com.bridgelabz;  // Package
 import java.util.Scanner;   // Import Scanner
@@ -10,20 +13,18 @@ import java.util.Scanner;   // Import Scanner
 
 public class LogicalPrograms {
     public static void main(String[] args) {  // Entry point of Program
-        Scanner scanner = new Scanner(System.in);  //make scanner obj
+        Scanner scanner = new Scanner(System.in);  // Make Scanner obj
         System.out.println("Enter a number: ");
-        int num = scanner.nextInt(); //Input int
-        int count=0;
+        String number = scanner.next();
+        int newNum = Integer.parseInt(number); // this method is  used to convert String to Integer in Java
+        int reverseNum=0;
 
-        for(int i=2;i<num;i++){
-            if (num%i==0){
-                count++;
-            }
+        for(int i=1;i<=number.length();i++){
+            int remainder = newNum%10;  //To find remainder
+            newNum = newNum/10;
+            reverseNum = reverseNum*10+remainder;  //Reverse Number logic
         }
-        if (count==0){
-            System.out.println(num+ " is a prime number");
-        }else
-            System.out.println(num + " is not a prime number");
+        System.out.println("Reverse number is: "+ reverseNum);
         }
 
 }
